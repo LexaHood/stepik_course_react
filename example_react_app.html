@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-    <div id="root"></div>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <div id="root"></div>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
-    <script>
-        const App = () => {
-            return React.createElement('div', {}, [
-                React.createElement("h1", {id: 'one', className: "hello"}, "HELLOOO EPTA"),
-                React.createElement(Book, {name: 'Example 1', yaer: 2011, price: 1999}),
-                React.createElement(Book, {name: 'Example 2', yaer: 2012, price: 2999}),
-                React.createElement(Book, {name: 'Example 3', yaer: 2013, price: 3999}),
-            ]);
-        };
+  <script>
+    const App = () => {
+      return React.createElement('div', {}, [
+        React.createElement("h1", { id: 'one', className: "hello" }, "HELLOOO EPTA"),
+        React.createElement(Book, { name: 'Example 1', yaer: 2011, price: 1999 }),
+        React.createElement(Book, { name: 'Example 2', yaer: 2012, price: 2999 }),
+        React.createElement(Book, { name: 'Example 3', yaer: 2013, price: 3999 }),
+      ]);
+    };
 
-        const Book = (props) => {
-            console.log(props);
-            return React.createElement('div', {}, [
-                React.createElement('h2', {}, props.name),
-                React.createElement('p', {}, props.yaer),
-                React.createElement('p', {}, props.price),
-            ])
-        };
+    const Book = (props) => {
+      console.log(props);
+      return React.createElement('div', {}, [
+        React.createElement('h2', {}, props.name),
+        React.createElement('p', {}, props.yaer),
+        React.createElement('p', {}, props.price),
+      ])
+    };
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(React.createElement(App));
-    </script>
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(React.createElement(App));
+  </script>
 </body>
+
 </html>
