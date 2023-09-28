@@ -12,8 +12,23 @@
 
     <script>
         const App = () => {
-            return React.createElement("h1", {id: 'one', className: "hello"}, "HELLOOO EPTA");
+            return React.createElement('div', {}, [
+                React.createElement("h1", {id: 'one', className: "hello"}, "HELLOOO EPTA"),
+                React.createElement(Book, {name: 'Example 1', yaer: 2011, price: 1999}),
+                React.createElement(Book, {name: 'Example 2', yaer: 2012, price: 2999}),
+                React.createElement(Book, {name: 'Example 3', yaer: 2013, price: 3999}),
+            ]);
         };
+
+        const Book = (props) => {
+            console.log(props);
+            return React.createElement('div', {}, [
+                React.createElement('h2', {}, props.name),
+                React.createElement('p', {}, props.yaer),
+                React.createElement('p', {}, props.price),
+            ])
+        };
+
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(React.createElement(App));
     </script>
