@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import { Book } from './Book';
+import { Preloader } from './Preloader';
 
-function App() {
-  return (
+function App(props) {
+  return props.isLoading ? <Preloader /> :(
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
