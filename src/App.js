@@ -1,16 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import { Book } from './Book';
 
 function App() {
-  const Book = (props) => {
-    return <>
-      <h2>{props.name}</h2>
-      <p>{props.yaer}</p>
-      <p>{props.price}</p>
-      {props.children ? <span>{props.children}</span> : ''}
-    </>
-  };
-
   return (
     <div className="App">
       <header className="App-header">
