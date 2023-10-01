@@ -6,7 +6,6 @@ class Comp extends Component {
     posts: [],
     loading: true,
     comments: [],
-
   }
 
   componentDidMount() {
@@ -32,7 +31,7 @@ class Comp extends Component {
 
   render() {
     return <>
-      {this.state.loading ? <Preloader /> : <h3>{this.state.posts.length} was loaded</h3>}
+      { this.state.loading ? <Preloader /> : <h3>{ this.state.posts.length } was loaded</h3> }
     </>
   }
 }
