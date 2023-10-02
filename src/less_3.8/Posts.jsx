@@ -6,7 +6,7 @@ export default (props) => {
   const {posts, cb} = props;
   return <div>
       {posts.map((post) => {
-        return <Post key={post.id} name={post.name} cb={cb}/>
+        return !post.hide && <Post key={post.id} name={post.name} id={post.id} cb={cb}/>
       })}
     </div>
 };
