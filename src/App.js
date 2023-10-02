@@ -5,6 +5,7 @@ import { Preloader } from './Preloader';
 import Comp from './less_3.5/CompExample';
 import Timer from './less_3.6/Timer';
 import Posts from './less_3.8/Posts';
+import Form from './less_4.1/Form';
 
 function App(props) {
   // less 3.3
@@ -40,7 +41,10 @@ function App(props) {
       {/* <Timer /> */}
 
       {/* less 3.8, 3.9 */}
-      <Posts posts={posts} cb={removePost} />
+      {/* <Posts posts={posts} cb={removePost} /> */}
+
+      {/* less 4.1 */}
+      <Form/>
     </div>
   );
 }
