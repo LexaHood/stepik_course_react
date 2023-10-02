@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Preloader } from "./Preloader";
+import { Preloader } from "../Preloader";
 
 class Comp extends Component {
   state = {
