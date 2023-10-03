@@ -12,14 +12,14 @@ function App(props) {
   // const [count, handleCount] = useState(0);
 
   // less 3.8, 3.9
-  const [posts, handlePosts] = useState([
-    {id: 'asd1', name: 'Hello Posts 1', hide: false},
-    {id: 'asd2', name: 'Hello Posts 2', hide: false},
-    {id: 'asd3', name: 'Hello Posts 3', hide: false},
-  ]);
-  const removePost = (id) => {
-    handlePosts(posts.map(post => (post.id === id ? {...post, hide: true} : post)));
-  };
+  // const [posts, handlePosts] = useState([
+  //   {id: 'asd1', name: 'Hello Posts 1', hide: false},
+  //   {id: 'asd2', name: 'Hello Posts 2', hide: false},
+  //   {id: 'asd3', name: 'Hello Posts 3', hide: false},
+  // ]);
+  // const removePost = (id) => {
+  //   handlePosts(posts.map(post => (post.id === id ? {...post, hide: true} : post)));
+  // };
 
   return props.isLoading ? <Preloader /> : (
     <div className="App">
@@ -43,7 +43,7 @@ function App(props) {
       {/* less 3.8, 3.9 */}
       {/* <Posts posts={posts} cb={removePost} /> */}
 
-      {/* less 4.1 */}
+      {/* less 4.1, 4.3 */}
       <Form/>
     </div>
   );
