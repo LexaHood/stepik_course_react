@@ -1,11 +1,12 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import './App.css';
-import { Book } from './less_2.5/Book';
+// import { Book } from './less_2.5/Book';
 import { Preloader } from './Preloader';
-import Comp from './less_3.5/CompExample';
-import Timer from './less_3.6/Timer';
-import Posts from './less_3.8/Posts';
-import Form from './less_4.1/Form';
+// import Comp from './less_3.5/CompExample';
+// import Timer from './less_3.6/Timer';
+// import Posts from './less_3.8/Posts';
+// import Form from './less_4.1/Form';
+import ValidForm from './less_4.4/ValidForm';
 
 function App(props) {
   // less 3.3
@@ -44,7 +45,10 @@ function App(props) {
       {/* <Posts posts={posts} cb={removePost} /> */}
 
       {/* less 4.1, 4.3 */}
-      <Form/>
+      {/* <Form/> */}
+
+      {/* less 4.4 */}
+      <ValidForm />
     </div>
   );
 }
