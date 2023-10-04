@@ -6,7 +6,8 @@ import { Preloader } from './Preloader';
 // import Timer from './less_3.6/Timer';
 // import Posts from './less_3.8/Posts';
 // import Form from './less_4.1/Form';
-import ValidForm from './less_4.4/ValidForm';
+// import ValidForm from './less_4.4/ValidForm';
+import ExampleRef from './less_4.5/exmapleRef';
 
 function App(props) {
   // less 3.3
@@ -48,7 +49,10 @@ function App(props) {
       {/* <Form/> */}
 
       {/* less 4.4 */}
-      <ValidForm />
+      {/* <ValidForm /> */}
+
+      {/* less 4.5 */}
+      <ExampleRef/>
     </div>
   );
 }
