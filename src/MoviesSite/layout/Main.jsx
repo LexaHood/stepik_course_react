@@ -1,0 +1,41 @@
+import React from 'react';
+import { Search } from "../components/Search";
+import { Movies } from "../components/Movies";
+import { Preloader } from "../components/Preloader";
+
+export default class Main extends React.Component {
+  state = {
+    movies: []
+  };
+
+  componentDidMount() {
+    fetch('http://www.omdbapi.com/?apikey=de468341&s=matrix')
+      .then(res => res.json())
+      .then(movies => this.setState({ movies: movies.Search }));
+  }
+
+  searchMovies = (searchValue) => {
+    this.setState({ movies: [] })
+    fetch(`http://www.omdbapi.com/?apikey=de468341&s=${searchValue}`)
+      .then(res => res.json())
+      .then(movies => {
+        if (movies.Responce === 'True') {
+          this.setState({ movies: movies.Search })
+          console.log('im here');
+        }
+      });
+  };
+
+  render() {
+    const { movies } = this.state;
+
+    return (
+      <>
+        <main className="container content">
+        <Search searchMovies={this.searchMovies}/>
+          {movies?.length ? <Movies movies={movies} /> : <Preloader/>}
+        </main>
+      </>
+    );
+  }
+}

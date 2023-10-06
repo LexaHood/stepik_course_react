@@ -1,13 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import ReactDOM from 'react-dom';
 import App from './App';
 
-const isLoading = false;
+const START_PROJECT = process.env.REACT_APP_START_PROJECT.includes('#') ? process.env.REACT_APP_START_PROJECT.split('#')[0].replace(/\s+/g, '') : process.env.REACT_APP_START_PROJECT.replace(/\s+/g, '');
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <App isLoading={isLoading}/>
-  </React.StrictMode>
+    <App START_PROJECT={START_PROJECT} />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
