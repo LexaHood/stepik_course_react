@@ -5,7 +5,8 @@ import { Preloader } from "../components/Preloader";
 
 export default class Main extends React.Component {
   state = {
-    movies: []
+    movies: [],
+    loading: true
   };
 
   componentDidMount() {
@@ -14,13 +15,14 @@ export default class Main extends React.Component {
       .then(movies => this.setState({ movies: movies.Search }));
   }
 
-  searchMovies = (searchValue) => {
+  searchMovies = (searchValue, type = 'all') => {
+    // console.log(`http://www.omdbapi.com/?apikey=de468341&s=${searchValue}${type !== 'all' ? '&type=' + type : ''}`);
     this.setState({ movies: [] })
-    fetch(`http://www.omdbapi.com/?apikey=de468341&s=${searchValue}`)
+    fetch(`http://www.omdbapi.com/?apikey=de468341&s=${searchValue}${type !== 'all' ? '&type=' + type : ''}`)
       .then(res => res.json())
       .then(movies => {
-        if (movies.Responce === 'True') {
-          this.setState({ movies: movies.Search })
+        if (movies.Response === 'True') {
+          this.setState({ movies: movies.Search, loading: false })
           console.log('im here');
         }
       });
