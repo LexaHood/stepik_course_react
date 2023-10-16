@@ -8,19 +8,15 @@ export default class Main extends React.Component {
 
   state = {
     movies: [],
-    loading: true
+    loading: false
   };
 
   componentDidMount() {
-    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
-      .then(res => res.json())
-      .then(movies => this.setState({ movies: movies.Search, loading: false }));
+    this.searchMovies('matrix');
   }
 
   searchMovies = (searchValue, type = 'all') => {
-    this.setState({ loading: true });
-    // console.log(`http://www.omdbapi.com/?apikey=de468341&s=${searchValue}${type !== 'all' ? '&type=' + type : ''}`);
-    this.setState({ movies: [] })
+    this.setState({ movies: [], loading: true });
     fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchValue}${type !== 'all' ? '&type=' + type : ''}`)
       .then(res => res.json())
       .then(movies => {
