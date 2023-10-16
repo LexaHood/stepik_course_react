@@ -3,14 +3,16 @@ import { Search } from "../components/Search";
 import { Movies } from "../components/Movies";
 import { Preloader } from "../components/Preloader";
 
+const API_KEY = process.env.REACT_APP_API_KEY;
 export default class Main extends React.Component {
+
   state = {
     movies: [],
     loading: true
   };
 
   componentDidMount() {
-    fetch('http://www.omdbapi.com/?apikey=de468341&s=matrix')
+    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
       .then(res => res.json())
       .then(movies => this.setState({ movies: movies.Search, loading: false }));
   }
@@ -19,13 +21,13 @@ export default class Main extends React.Component {
     this.setState({ loading: true });
     // console.log(`http://www.omdbapi.com/?apikey=de468341&s=${searchValue}${type !== 'all' ? '&type=' + type : ''}`);
     this.setState({ movies: [] })
-    fetch(`http://www.omdbapi.com/?apikey=de468341&s=${searchValue}${type !== 'all' ? '&type=' + type : ''}`)
+    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchValue}${type !== 'all' ? '&type=' + type : ''}`)
       .then(res => res.json())
       .then(movies => {
         if (movies.Response === 'True') {
           this.setState({ movies: movies.Search })
         }
-        this.sÍetState({ loading: false })
+        this.setState({ loading: false })
       });
   };
 

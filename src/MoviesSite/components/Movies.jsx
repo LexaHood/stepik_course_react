@@ -7,7 +7,7 @@ function Movies(props) {
   console.log('movieArray', movies);
   return (
     <div className="movies">
-      { movies.length ? movies.map(movie => <Movie key={movie.imdbID} {...movie}/>) : <h4>Nothing Found</h4> }
+      { movies.length ? movies.map(movie => <Movie key={movie.imdbID} {...movie}/>) : <h5>Nothing Found</h5> }
     </div>
   );
 }
