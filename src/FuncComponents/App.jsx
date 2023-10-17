@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
+import Clicker from "./less_6.2/Clicker";
+import Timer from "./less_6.5/Timer";
+
 
 export default function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
-      <button onClick={() => setCount(count - 1)}>-</button>
-      <span>{count}</span>
-      <button onClick={() => setCount(count + 1)}>+</button>
+      <Clicker/>
+      <Timer/>
     </div>
   );
 };
