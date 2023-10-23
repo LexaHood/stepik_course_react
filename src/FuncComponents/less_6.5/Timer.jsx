@@ -29,11 +29,11 @@ export default function Timer() {
     setCount(0);
   };
 
-  useEffect(() => {
+  useEffect(function initDestroyFunc() {
     return () => handleStop();
   }, []);
 
-  useEffect(() => {
+  useEffect(function updateCounter() {
     localStorage.setItem('count', count);
     console.log(`LocalStorage updated: count = ${localStorage.getItem('count')}`);
   }, [count]);
