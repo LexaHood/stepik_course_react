@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function Timer() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(() => {
+    const storageCount = localStorage.getItem('count');
+    return +storageCount || 0;
+  });
   const [isCounting, setCounting] = useState(false);
   const timerRef = useRef(undefined);
 
@@ -27,8 +30,6 @@ export default function Timer() {
   };
 
   useEffect(() => {
-    const storageCount = localStorage.getItem('count');
-    if (storageCount) setCount(+storageCount);
     return () => handleStop();
   }, []);
 
