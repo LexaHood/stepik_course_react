@@ -4,6 +4,7 @@ import Timer from "./less_6.5/Timer";
 import { Context } from "./less_7.3/Context";
 import Books from "./less_7.3/Books";
 import RenderAfter from "./less_7.4/renderAfter";
+import MemoizationComp from "./less_7.5/memoization";
 
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
         <Books/>
       </Context>
       <RenderAfter/>
+      <MemoizationComp/>
     </div>
   );
 };

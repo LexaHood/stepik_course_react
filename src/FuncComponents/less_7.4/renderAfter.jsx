@@ -17,9 +17,9 @@ export default function RenderAfter() {
   }, [value]);
 
   return (
-    <>
+    <div style={{margin: '1rem 0'}}>
       <button onClick={() => setValue(0)}>Current value1: {value}</button>
       <button onClick={() => setValue2(0)}>Current value2: {value2}</button>
-    </>
+    </div>
   );
 };
